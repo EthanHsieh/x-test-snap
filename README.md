@@ -44,6 +44,9 @@ $ sudo snap connect x-test:xtest x-test:xtest-<314~322>
 # Run x-test
 $ sudo x-test.tee-supplicant &
 $ sudo x-test.xtest
+
+# Note: please disconnect the existing connection when connecting to a new x-test version
+$ sudo snap disconnect x-test:xtest
 ```
 
 ## Command
@@ -58,4 +61,5 @@ $ sudo x-test.xtest
   restore unsign TAs
 - x-test.import:  
   import your own TAs, please connect x-test first before you import your TAs.  
-  command example: x-test.import <your TAs folder/TA>
+  command example: x-test.import <your TAs folder/TA>  
+  If you would like to restore default TAs, please disconnect and then re-connect x-test:xtest.

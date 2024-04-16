@@ -178,7 +178,7 @@ parts:
                     "\$cmd" "\$@"
                 else
                     "\$cmd" --install-ta \$SNAP_COMMON/lib/optee_armtz
-                    "\$cmd"
+                    "\$cmd" "\$@"
                 fi
             elif [ "\$cmd" == "tee-supplicant" ]
             then
@@ -200,6 +200,7 @@ parts:
                 cp \$SNAP/tmp/lib/optee_armtz/* \$SNAP_COMMON/lib/optee_armtz
             elif [ "\$cmd" == "import" ]
             then
+                rm -f \$SNAP_COMMON/lib/optee_armtz/*
                 cp \$@/* \$SNAP_COMMON/lib/optee_armtz
             fi
 
